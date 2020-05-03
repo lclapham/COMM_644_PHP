@@ -59,8 +59,8 @@
 
     // The round function
     $num3 = 3.12456;
-    echo round($num3,2);
-    
+    echo round($num3, 2);
+
     // The number format function
     echo "<h3>Number format function</h3>";
     $num4 = 20987;
@@ -75,14 +75,28 @@
     $taxRate = .08;
 
     $total = $quantity * $price;
-    $total = $total + ($total * $taxRate);
+    // $total = $total + ($total * $taxRate);
+    $total += ($total * $taxRate);
     $total = number_format($total, 2);
 
     echo "<p>You are purchasing <strong>" . $quantity . "</strong>
     widget(s) at a cost of <strong>$" . $price . "</strong> each.
-    With tax, the total comes to <strong>$" . $total ."</strong></p>";
+    With tax, the total comes to <strong>$" . $total . "</strong></p>";
 
+    //Constants
+    echo "<h3>Working with constants</h3>";
 
+    define('NAME', 'value'); //example constant
+    define('USERNAME', 'Lamar');
+    define('PI', 3.14);
+    echo "Hello, " . USERNAME;
+
+    // Set the date
+    define('TODAY', 'April 4, 2018');
+    echo '<p>Today is ' . TODAY . '</p>';
+
+    // Predefined constants
+    echo '<p>This server is running version <strong>' . PHP_VERSION . '</strong> of PHP on the ' . PHP_OS . ' operating system </p>';
 
     ?>
 
